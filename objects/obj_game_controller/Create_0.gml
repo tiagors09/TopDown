@@ -1,3 +1,5 @@
+global.level = 1;
+
 if (not instance_exists(obj_enemy_spawner))
     instance_create_layer(
         0, 0,
