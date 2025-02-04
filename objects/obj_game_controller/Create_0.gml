@@ -33,4 +33,3 @@ if (not instance_exists(obj_player)) {
         0, room_height - (sprite_get_height(spr_player) / 2)
     );
 }
-    
