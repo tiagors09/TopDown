@@ -1,4 +1,6 @@
 global.level = 1;
+global.player_life = 10;
+randomize();
 
 if (not instance_exists(obj_enemy_spawner))
     instance_create_layer(
@@ -27,6 +29,8 @@ if (not instance_exists(obj_player)) {
         "Instances",
         obj_player
     );
+    
+    randomize();
     
     _player.x = random_range(
         0, room_width - (sprite_get_width(spr_player) / 2)

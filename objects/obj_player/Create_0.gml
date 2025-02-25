@@ -1,4 +1,4 @@
-life = 10;
+global.player_life = 10;
 velocity = 5;
 shoot_delay = 0.2;
 can_shoot = false;
@@ -108,13 +108,13 @@ shake_camera = function () {
 suffer_damage = function (_damage) {
     if (not invicible) {
         shake_camera();
-        life -= _damage;
+        global.player_life -= _damage;
         invicible = true;
         image_alpha = alpha_value;
         invicible_timer = game_get_speed(gamespeed_fps) * 3;
     }
     
-    if (life <= 0)
+    if (global.player_life <= 0)
         instance_destroy(id);
 }
 

@@ -1,4 +1,4 @@
-MAX_ENEMY_INSTANCES = 20;
+MAX_ENEMY_INSTANCES = 3 * global.level;
 MIN_DISTANCE = 100;
 enemy_instances = 0;
 verify_enemies = false;
