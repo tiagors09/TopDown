@@ -105,17 +105,18 @@ shake_camera = function () {
             obj_screen_shake.shake = shake_collision;
 }
 
-suffer_damage = function (_damage) {
+suffer_damage = function (damage) {
     if (not invicible) {
         shake_camera();
-        global.player_life -= _damage;
+        global.player_life -= damage;
         invicible = true;
         image_alpha = alpha_value;
         invicible_timer = game_get_speed(gamespeed_fps) * 3;
     }
     
-    if (global.player_life <= 0)
+    if (global.player_life <= 0) {
         instance_destroy(id);
+    }
 }
 
 check_invincibility = function () {

@@ -6,6 +6,7 @@ max_speed = 4;
 chunks = random_range(4, 8);
 shake_death = 20;
 damage = 1;
+auto_destroy_damage = 0;
 
 alarm[0] = game_get_speed(gamespeed_fps) * 1.2;
 
@@ -18,8 +19,10 @@ speed = random_range(
 apply_damage = function () {
     var _player = instance_place(x, y, obj_player);
     
-    if (_player)
+    if (_player) {
         _player.suffer_damage(damage);
+        suffers_damage(auto_destroy_damage);
+    }
 }
 
 choose_random_direction = function () {
@@ -66,8 +69,8 @@ follow_player = function () {
     }
 }
 
-suffers_damage = function (_damage) {
-    life_points -= _damage;
+suffers_damage = function (damage) {
+    life_points -= damage;
     
     if (life_points <= 0)
         instance_destroy(id, true);

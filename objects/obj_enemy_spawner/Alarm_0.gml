@@ -1,4 +1,4 @@
-if (enemy_instances < MAX_ENEMY_INSTANCES) {
+repeat(MAX_ENEMY_INSTANCES) {
     var _xx =   random_range(
         sprite_get_width(spr_enemy_2) / 2, 
         room_width - (sprite_get_width(spr_enemy_2) / 2)
@@ -29,6 +29,4 @@ if (enemy_instances < MAX_ENEMY_INSTANCES) {
                 verify_enemies = true;
         }
     }
-    
-    alarm[0] = game_get_speed(gamespeed_fps) * 5;
 }
